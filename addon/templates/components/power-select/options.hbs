@@ -4,6 +4,11 @@
   {{/if}}
 {{/if}}
 {{#each options as |opt index|}}
+{{#ember-collection
+  items=options
+  cell-layout=(fixed-grid-layout 200 50)
+  as |item index|
+}}
   {{#if opt.groupName}}
     <li class="ember-power-select-group" aria-disabled={{ember-power-select-true-string-if-present opt.disabled}} role="option">
       <span class="ember-power-select-group-name">{{opt.groupName}}</span>
@@ -27,4 +32,4 @@
       {{yield opt select}}
     </li>
   {{/if}}
-{{/each}}
+{{/ember-collection}}

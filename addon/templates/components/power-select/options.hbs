@@ -6,7 +6,7 @@
 {{#ember-collection
   items=options
   cell-layout=(fixed-grid-layout 200 50)
-  as |item index|
+  as |opt index|
 }}
   {{#if opt.groupName}}
     <li class="ember-power-select-group" aria-disabled={{ember-power-select-true-string-if-present opt.disabled}} role="option">
